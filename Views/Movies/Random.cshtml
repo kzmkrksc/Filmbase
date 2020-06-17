@@ -1,0 +1,33 @@
+﻿@model FilmBase.ViewModels.RandomMovieViewModel
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*
+    Create and pass a classname to movie name based on the customer count
+*@
+
+@{
+    var className = Model.Customers.Count > 0 ? "popular" : null;
+}
+
+<h2 class="@className">@Model.Movie.Name</h2>
+
+@*
+    Render customers and show text if there are no customers.
+*@
+
+@if (Model.Customers.Count == 0)
+{
+    <text> None has rented this movie before. </text>
+}
+else
+{
+    <ul>
+        @foreach (var customer in Model.Customers)
+        {
+            <li>@customer.Name</li>
+        }
+    </ul>
+}
