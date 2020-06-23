@@ -6,22 +6,27 @@
         @Html.AntiForgeryToken()
 
         @*<ul class="nav navbar-nav navbar-right">
-            <li>
-                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "btn btn-primary nav-link", @role = "button" })
-            </li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-secondary nav-link" role="button">Log off</a></li>
-        </ul>*@
+                <li>
+                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "btn btn-primary nav-link", @role = "button" })
+                </li>
+                <li><a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-secondary nav-link" role="button">Log off</a></li>
+            </ul>*@
 
-    <form class="form-inline my-2 my-lg-0">
-        @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "btn btn-primary", @role = "button" })
-        <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-secondary" role="button">Log off</a>
-    </form>
+        <form class="form-inline my-2 my-lg-0">
+            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "btn btn-primary", @role = "button" })
+            <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-secondary" role="button">Log off</a>
+        </form>
     }
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
+    @*<ul class="nav navbar-nav navbar-right">
         <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "nav-link" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link" })</li>
-    </ul>
+    </ul>*@
+
+    <form class="form-inline my-2 my-lg-0">
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "btn btn-primary", @role = "button" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn btn-secondary", @role = "button" })</li>
+    </form>
 }
