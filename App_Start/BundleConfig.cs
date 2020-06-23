@@ -20,11 +20,11 @@ namespace FilmBase
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrap-v4.5.0.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap-slate.css",
+                      "~/Content/bootstrap-darkly-v4.5.0.css",
                       "~/Content/site.css"));
         }
     }

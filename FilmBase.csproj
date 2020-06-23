@@ -194,6 +194,7 @@
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-darkly-v4.5.0.css" />
     <Content Include="Content\bootstrap-darkly.css" />
     <Content Include="Content\bootstrap-flatly.css" />
     <Content Include="Content\bootstrap-paper.css" />
@@ -207,6 +208,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap-v4.5.0.js" />
+    <Content Include="Scripts\bootstrap-v4.5.0.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\filmbase - Web Deploy.pubxml" />
