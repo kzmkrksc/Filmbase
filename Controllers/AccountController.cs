@@ -75,7 +75,7 @@ namespace FilmBase.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -177,12 +177,36 @@ namespace FilmBase.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> ConfirmEmail(string userId, string code)
         {
-            if (userId == null || code == null)
+            //if (userId == null || code == null)
+            //{
+            //    return View("Error");
+            //}
+            //var result = await UserManager.ConfirmEmailAsync(userId, code);
+            //return View(result.Succeeded ? "ConfirmEmail" : "Error");
+
+            ApplicationUser user = this.UserManager.FindById(code);
+            if (user != null)
             {
-                return View("Error");
+                if (user.Id == userId)
+                {
+                    user.EmailConfirmed = true;
+                    await UserManager.UpdateAsync(user);
+                    //await SignInManager.SignInAsync(user, isPersistent: false);
+                    return RedirectToAction("Index", "Home", new { ConfirmedEmail = user.Email });
+                }
+                else
+                {
+                    return RedirectToAction("Confirm", "Account", new { Email = user.Email });
+                }
             }
-            var result = await UserManager.ConfirmEmailAsync(userId, code);
-            return View(result.Succeeded ? "ConfirmEmail" : "Error");
+            else
+            {
+                return RedirectToAction("Confirm", "Account", new { Email = "" });
+            }
+
+
+
+
         }
 
         //
