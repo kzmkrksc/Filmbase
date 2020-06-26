@@ -197,6 +197,10 @@
     <Compile Include="Migrations\202006232054099_userNameLoginAdded.Designer.cs">
       <DependentUpon>202006232054099_userNameLoginAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006261958073_moviesAdded.cs" />
+    <Compile Include="Migrations\202006261958073_moviesAdded.Designer.cs">
+      <DependentUpon>202006261958073_moviesAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -406,6 +410,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006232054099_userNameLoginAdded.resx">
       <DependentUpon>202006232054099_userNameLoginAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006261958073_moviesAdded.resx">
+      <DependentUpon>202006261958073_moviesAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
