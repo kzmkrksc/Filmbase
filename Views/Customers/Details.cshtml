@@ -13,7 +13,7 @@
         <li>Birthdate: @Model.BirthDate.Value.ToShortDateString()</li>
     }
     <li>Membership Type: @Model.MembershipType.Name</li>
-    <li>Membership Duration: @Model.MembershipType.DurationInMonths Month(s)</li>
+    <li>Membership Duration:  @(Model.MembershipType.DurationInMonths < 1 ? " -" : Model.MembershipType.DurationInMonths == 1 ?  "1 Month" : Model.MembershipType.DurationInMonths.ToString() + " Months")</li>
     <li>Discount Rate: @Model.MembershipType.DiscountRate%</li>
     <li>Subscribed to Newsletter?: @(Model.IsSubscribedToNewsletter == false ? "No" : "Yes")</li>
 
