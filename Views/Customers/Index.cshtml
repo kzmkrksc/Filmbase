@@ -16,7 +16,19 @@ else
         <thead>
             <tr>
                 <th>
-                    Customer
+                    Customer Name
+                </th>
+                <th>
+                    Membership Name
+                </th>
+                <th>
+                    Membership Duration
+                </th>
+                <th>
+                    Discount Rate
+                </th>
+                <th>
+                    Subsscribed to Newsletter
                 </th>
             </tr>
         </thead>
@@ -26,6 +38,18 @@ else
                 <tr>
                     <td>
                         @Html.ActionLink(customer.Name, "Details", "Customers", new { id=customer.Id}, null)
+                    </td>
+                    <td>
+                        @customer.MembershipType.Name
+                    </td>
+                    <td>
+                        @customer.MembershipType.DurationInMonths Month(s)
+                    </td>
+                    <td>
+                        @customer.MembershipType.DiscountRate%
+                    </td>
+                    <td>
+                        @customer.IsSubscribedToNewsletter
                     </td>
                 </tr>
             }
