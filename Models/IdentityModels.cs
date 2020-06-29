@@ -20,7 +20,11 @@ namespace FilmBase.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        //Customer Model
         public DbSet<Customer> Customers { get; set; }
+
+
+        //Movies Model
         public DbSet<Movie> Movies { get; set; }
 
 
