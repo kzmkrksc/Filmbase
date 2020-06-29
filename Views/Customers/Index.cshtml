@@ -52,7 +52,7 @@ else
                         @customer.MembershipType.Name
                     </td>
                     <td>
-                        @customer.MembershipType.DurationInMonths Month(s)
+                        @(customer.MembershipType.DurationInMonths < 1 ? "-" : customer.MembershipType.DurationInMonths == 1 ?  "1 Month" : customer.MembershipType.DurationInMonths.ToString() + " Months")
                     </td>
                     <td>
                         @customer.MembershipType.DiscountRate%
