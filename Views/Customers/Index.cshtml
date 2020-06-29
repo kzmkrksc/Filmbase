@@ -19,7 +19,10 @@ else
                     Customer Name
                 </th>
                 <th>
-                    Membership Name
+                    Birth Date
+                </th>
+                <th>
+                    Membership Type
                 </th>
                 <th>
                     Membership Duration
@@ -40,6 +43,12 @@ else
                         @Html.ActionLink(customer.Name, "Details", "Customers", new { id=customer.Id}, null)
                     </td>
                     <td>
+                        @if (customer.BirthDate.HasValue)
+                        {
+                            @customer.BirthDate.Value.ToString("dd.MM.yyyy")
+                        }
+                    </td>
+                    <td>
                         @customer.MembershipType.Name
                     </td>
                     <td>
@@ -49,7 +58,7 @@ else
                         @customer.MembershipType.DiscountRate%
                     </td>
                     <td>
-                        @customer.IsSubscribedToNewsletter
+                        @(customer.IsSubscribedToNewsletter == false ? "No" : "Yes")
                     </td>
                 </tr>
             }
