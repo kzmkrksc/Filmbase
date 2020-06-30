@@ -22,3 +22,24 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* Datatables Select List and Search filter styling for dark theme*/
+.dataTables_length > label > select, .dataTables_length > label > select:focus, .dataTables_length > label > select option, .dataTables_filter > label > input {
+    color: #00bc8c;
+    background-color: #222 !important;
+    border: 1px solid #00bc8c;
+}
+    .dataTables_filter > label > input:focus {
+        color: #00bc8c;
+    }
+/*****************************************************************/
+
+/*Overriding theme colors and fonts*/
+body, .table {
+    color: #aaa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.page-link {
+    color:#d2d0d0
+}
+/************************************/
