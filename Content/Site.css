@@ -34,12 +34,26 @@ textarea {
     }
 /*****************************************************************/
 
-/*Overriding theme colors and fonts*/
+/*Overriding theme */
 body, .table {
     color: #aaa;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 .page-link {
     color:#d2d0d0
+}
+@media screen and (max-width: 767px) {
+    div.dataTables_wrapper div.dataTables_length,
+    div.dataTables_wrapper div.dataTables_filter,
+    div.dataTables_wrapper div.dataTables_info,
+    div.dataTables_wrapper div.dataTables_paginate {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    div.dataTables_wrapper div.dataTables_paginate {
+        margin-top: 15px;
+    }
 }
 /************************************/
