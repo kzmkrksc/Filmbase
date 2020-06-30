@@ -14,7 +14,6 @@ namespace FilmBase
                         "~/Scripts/respond.js",
                         "~/scripts/datatables/jquery.datatables.js",
                         "~/scripts/datatables/datatables.bootstrap4.js",
-                        "~/scripts/datatables/datatables.fixedHeader.js",
                         "~/scripts/datatables/datatables.responsive.js",
                         "~/scripts/datatables/responsive.bootstrap4.js"
                         ));
@@ -35,7 +34,6 @@ namespace FilmBase
                       "~/Content/bootstrap-darkly-v4.5.0.css",
                       "~/Content/datatables/css/datatables.bootstrap4.css",
                       "~/Content/datatables/css/responsive.bootstrap4.css",
-                      "~/Content/datatables/css/fixedHeader.bootstrap4.css",
                       "~/Content/site.css"));
         }
     }
