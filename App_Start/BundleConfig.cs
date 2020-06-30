@@ -8,8 +8,16 @@ namespace FilmBase
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+            bundles.Add(new ScriptBundle("~/bundles/lib").Include(
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/bootstrap-v4.5.0.js",
+                        "~/Scripts/respond.js",
+                        "~/scripts/datatables/jquery.datatables.js",
+                        "~/scripts/datatables/datatables.bootstrap4.js",
+                        "~/scripts/datatables/datatables.fixedHeader.js",
+                        "~/scripts/datatables/datatables.responsive.js",
+                        "~/scripts/datatables/responsive.bootstrap4.js"
+                        ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -19,12 +27,15 @@ namespace FilmBase
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap-v4.5.0.js",
-                      "~/Scripts/respond.js"));
+            //bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+            //          "~/Scripts/bootstrap-v4.5.0.js",
+            //          "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-darkly-v4.5.0.css",
+                      "~/Content/datatables/css/datatables.bootstrap4.css",
+                      "~/Content/datatables/css/responsive.bootstrap4.css",
+                      "~/Content/datatables/css/fixedHeader.bootstrap4.css",
                       "~/Content/site.css"));
         }
     }

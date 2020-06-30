@@ -12,7 +12,8 @@
 }
 else
 {
-    <table class="table table-bordered table-striped table-hover">
+<div class="table-responsive-sm">
+    <table id="customersList" class="table table-bordered table-striped table-hover" style="width:100%">
         <thead>
             <tr>
                 <th>
@@ -40,7 +41,7 @@ else
             {
                 <tr>
                     <td>
-                        @Html.ActionLink(customer.Name, "Details", "Customers", new { id=customer.Id}, null)
+                        @Html.ActionLink(customer.Name, "Details", "Customers", new { id = customer.Id }, null)
                     </td>
                     <td>
                         @if (customer.BirthDate.HasValue)
@@ -52,7 +53,7 @@ else
                         @customer.MembershipType.Name
                     </td>
                     <td>
-                        @(customer.MembershipType.DurationInMonths < 1 ? "-" : customer.MembershipType.DurationInMonths == 1 ?  "1 Month" : customer.MembershipType.DurationInMonths.ToString() + " Months")
+                        @(customer.MembershipType.DurationInMonths < 1 ? "-" : customer.MembershipType.DurationInMonths == 1 ? "1 Month" : customer.MembershipType.DurationInMonths.ToString() + " Months")
                     </td>
                     <td>
                         @customer.MembershipType.DiscountRate%
@@ -64,6 +65,38 @@ else
             }
         </tbody>
     </table>
+</div>
+
 }
 
 
+@section scripts {
+       <script>
+           $(document).ready(function () {
+               var dataTable = $('#customersList').DataTable({
+                   pageLength: 5,
+                   "columnDefs":
+                       [{
+                           "targets": 0,
+                           width: '30%',
+
+                       },
+                       {
+                           "targets": 4,
+                           width: '10%',
+
+                       },
+                       {
+                           "targets": 5,
+                           width: '15%',
+
+                       }],
+                   fixedColumns: true,
+                   responsive:true
+
+               });
+
+               new $.fn.dataTable.FixedHeader( dataTable );
+           });
+       </script>
+}
