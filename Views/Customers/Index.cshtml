@@ -12,8 +12,8 @@
 }
 else
 {
-<div class="table-responsive-sm">
-    <table id="customersList" class="table table-bordered table-striped table-hover responsive nowrap" style="width:100%">
+
+    <table id="customersList" class="table table-bordered table-striped table-hover responsive " style="width:100%">
         <thead>
             <tr>
                 <th>
@@ -65,7 +65,7 @@ else
             }
         </tbody>
     </table>
-</div>
+
 
 }
 
@@ -75,24 +75,25 @@ else
            $(document).ready(function () {
                var dataTable = $('#customersList').DataTable({
                    pageLength: 5,
-                   "columnDefs":
-                       [{
-                           "targets": 0,
-                           width: '30%',
-
-                       },
-                       {
-                           "targets": 4,
-                           width: '10%',
-
-                       },
-                       {
-                           "targets": 5,
-                           width: '15%',
-
-                       }],
                    fixedColumns: true,
-                   responsive:true
+                   //responsive: {
+                   //    breakpoints: [
+                   //        { name: 'mobile-l', width: 480 },
+                   //    ]
+                   //},
+                   //iDisplayLength: 50,
+                   "columns": [
+                       { width:"30%", "data": "name", className: 'all' },
+                       { "data": "birth_date", className: 'desktop' },
+                       { "data": "membership_type", className: 'desktop' },
+                       { "data": "membership_duration", className: 'desktop' },
+                       { "data": "discount_rate", className: 'desktop' },
+                       { "data": "subscribed_to_newsletter", className: 'desktop' },
+                        ]
+
+                   //"columnDefs": [
+                   //    { className: 'mobile-l', targets: [1,2,3,4,5] }
+                   //    ]
 
                });
 
