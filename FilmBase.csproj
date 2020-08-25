@@ -234,9 +234,9 @@
     <Compile Include="Migrations\202006292035237_AddBirthDateToCustomer.Designer.cs">
       <DependentUpon>202006292035237_AddBirthDateToCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008051240556_AddCustomersToDb.cs" />
-    <Compile Include="Migrations\202008051240556_AddCustomersToDb.Designer.cs">
-      <DependentUpon>202008051240556_AddCustomersToDb.cs</DependentUpon>
+    <Compile Include="Migrations\202008251027297_AddReleaseDateToMovies.cs" />
+    <Compile Include="Migrations\202008251027297_AddReleaseDateToMovies.Designer.cs">
+      <DependentUpon>202008251027297_AddReleaseDateToMovies.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -710,8 +710,8 @@
     <EmbeddedResource Include="Migrations\202006292035237_AddBirthDateToCustomer.resx">
       <DependentUpon>202006292035237_AddBirthDateToCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008051240556_AddCustomersToDb.resx">
-      <DependentUpon>202008051240556_AddCustomersToDb.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008251027297_AddReleaseDateToMovies.resx">
+      <DependentUpon>202008251027297_AddReleaseDateToMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -7,13 +7,13 @@ namespace FilmBase.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddCustomersToDb : IMigrationMetadata
+    public sealed partial class AddReleaseDateToMovies : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddCustomersToDb));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddReleaseDateToMovies));
         
         string IMigrationMetadata.Id
         {
-            get { return "202008051240556_AddCustomersToDb"; }
+            get { return "202008251027297_AddReleaseDateToMovies"; }
         }
         
         string IMigrationMetadata.Source

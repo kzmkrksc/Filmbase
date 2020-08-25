@@ -10,41 +10,38 @@ namespace FilmBase.Controllers
 {
     public class MoviesController : Controller
     {
-        //list of movies
-        public ActionResult Index(int? pageIndex, string sortBy)
+        private ApplicationDbContext _context = new ApplicationDbContext();
+        //disposing
+        protected override void Dispose(bool disposing)
         {
-            var movies = GetMovies();
+            _context.Dispose();
+        }
+
+        //list of movies
+        [HttpGet]
+        public ActionResult Index()
+        {
+            var movies = _context.Movies.ToList();
             return View(movies);
         }
+
+        //Create Movie
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create()
+        {
+
+            return View();
+        }
+
         public ActionResult Details(int id)
         {
-            var movie = GetMovies().SingleOrDefault(c => c.Id == id);
+            var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
             if (movie == null)
             {
                 return HttpNotFound();
             }
             return View(movie);
-        }
-
-        public IEnumerable<Movie> GetMovies()
-        {
-            return new List<Movie>
-            {
-                new Movie { Id = 1, Name = "Fast and Furious" },
-                new Movie { Id = 2, Name = "Lord of the Rings: The Fellowship of the Ring" },
-                new Movie { Id = 3, Name = "Gladiator" },
-                new Movie { Id = 4, Name = "Inception" },
-                new Movie { Id = 5, Name = "Prestige" },
-                new Movie { Id = 6, Name = "Illusionist" },
-                new Movie { Id = 7, Name = "Midnight in Paris" },
-                new Movie { Id = 8, Name = "Avengers: Endgame" },
-                new Movie { Id = 9, Name = "Braveheart" },
-                new Movie { Id = 10, Name = "Inglorious Basterds" },
-                new Movie { Id = 11, Name = "Django" },
-                new Movie { Id = 12, Name = "Hateful Eight" },
-                new Movie { Id = 13, Name = "Kill Bill: Vol I" }
-
-            };
         }
 
         // GET: Movies/Random
